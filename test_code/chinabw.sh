@@ -2,7 +2,7 @@ cbw()
 {
 
     arch=$( uname -m )
-    wget --no-check-certificate https://bintray.com/ookla/download/download_file?file_path=ookla-speedtest-1.0.0-${arch}-linux.tgz -O speedtest.tgz 1>/dev/null 2>&1
+    wget --no-check-certificate https://install.speedtest.net/app/cli/ookla-speedtest-1.0.0-${arch}-linux.tgz -O speedtest.tgz 1>/dev/null 2>&1
     tar xfvz speedtest.tgz >/dev/null 2>&1
     chmod +x speedtest
     bd=`./speedtest --accept-license -s $1 2>/dev/null | awk -F '(' '{print $1}'`
